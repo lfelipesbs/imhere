@@ -1,9 +1,9 @@
 import React from "react";
-import Home from "./src/screens/Home";
+import Home from "./src/views/Home";
 
 const App = () => {
 	return (
-		<Home/>
+		<Home />
 	)
 }
 

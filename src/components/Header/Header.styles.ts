@@ -1,13 +1,9 @@
 import { StyleSheet } from "react-native";
+import { HeaderStyles } from "./Header.types";
 
-export const homeStyles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: "#131016",
-        padding: 24
-    },
-    eventName: {
-        color: "#FDFCFE",
+export const headerStyles = StyleSheet.create<HeaderStyles>({
+	eventName: {
+        color: "#FFF",
         fontSize: 24,
         fontWeight: "bold",
         marginTop: 48
