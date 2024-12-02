@@ -4,6 +4,7 @@ import { homeStyles } from "./Home.styles";
 import { HomeProps } from "./Home.types";
 import Header from "../../components/Header";
 import AddInput from "../../components/AddInput";
+import Participants from "../../components/Participant";
 
 const Home: React.FC<HomeProps> = ({
 	onPress,
@@ -23,10 +24,13 @@ const Home: React.FC<HomeProps> = ({
 				year={year}
 			/>
 			<AddInput
-				buttonText="+"
 				onPress={onPress}
 				placeholder="Adicione um participante"
 			/>
+			<Participants name="Luiz Felipe" />
+			<Participants name="Lucas Gusmão" />
+			<Participants name="Marcelo Melo" />
+			<Participants name="João Pedro" />
         </View>
     );
 };

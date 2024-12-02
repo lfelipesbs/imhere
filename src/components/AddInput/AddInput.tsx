@@ -2,7 +2,7 @@ import { Text, TextInput, TouchableOpacity, View } from "react-native"
 import { AddInputProps } from "./AddInput.types"
 import { addInputStyles } from "./AddInput.styles";
 
-const AddInput: React.FC<AddInputProps> = ({ onPress, placeholder, buttonText }) => {
+const AddInput: React.FC<AddInputProps> = ({ onPress, placeholder }) => {
 	return(
 		<View style={addInputStyles.form}>
 			<TextInput
@@ -12,7 +12,7 @@ const AddInput: React.FC<AddInputProps> = ({ onPress, placeholder, buttonText })
 			/>
 			<TouchableOpacity style={addInputStyles.button} onPress={onPress}>
 				<Text style={addInputStyles.buttonText}>
-					{buttonText}
+					+
 				</Text>
 			</TouchableOpacity>
 		</View>
