@@ -1,18 +1,18 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useState } from "react";
 import Home from "./Home";
 import { getMonthName, getWeekDay } from "../../utils/getDate";
 
 const homeContainer: React.FC = () => {
 	const date = new Date();
-	const data = ["Luiz", "Marta", "Felipe", "Leticia"];
+	const [participants, setParticipants] = useState<string[]>([]);
 
 	const handleParticipantAdd = useCallback((): void => {
-		console.log('Você clicou no botão de Adicionar!');
-	}, []);
+		setParticipants((prevParticipants) => [...prevParticipants, 'Novo participante']);
+	}, [setParticipants]);
 
 	const handleParticipantRemove = useCallback((): void => {
-		console.log('Você clicou no botão de Remover!')
-	}, []);
+		setParticipants((prevParticipants) => prevParticipants.slice(0, -1));
+	}, [setParticipants]);
 
 	return (
 		<Home
@@ -22,7 +22,7 @@ const homeContainer: React.FC = () => {
 			month={getMonthName(date.getMonth())}
 			weekDay={getWeekDay(date.getDay())}
 			year={date.getFullYear()}
-			participants={data}
+			participants={participants}
 		/>
 	)
 }

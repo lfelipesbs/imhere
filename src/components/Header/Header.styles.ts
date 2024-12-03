@@ -6,7 +6,7 @@ export const headerStyles = StyleSheet.create<HeaderStyles>({
         color: "#FFF",
         fontSize: 24,
         fontWeight: "bold",
-        marginTop: 48
+		marginTop: 28
     },
     eventDate: {
         color: "#6B6B6B",

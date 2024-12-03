@@ -15,5 +15,4 @@ const Participant: React.FC<ParticipantProps> = ({ name, onPress }) => (
 	</View>
 );
 
-
 export default Participant;
