@@ -1,12 +1,14 @@
 import { ViewStyle } from "react-native";
 
 export interface HomeProps {
-	onPress: () => any;
+	handleParticipantAdd: () => void;
+	handleParticipantRemove: () => void;
 	title?: string;
 	weekDay: string;
 	day: number;
 	month: string;
 	year: number;
+	participants: string[];
 };
 
 export interface HomeStyles {

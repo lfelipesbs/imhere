@@ -1,7 +1,7 @@
 import { TextStyle, ViewStyle } from "react-native";
 
 export interface AddInputProps {
-	onPress: () => any;
+	onPress: () => void;
 	placeholder?: string;
 };
 

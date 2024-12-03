@@ -4,15 +4,17 @@ import { homeStyles } from "./Home.styles";
 import { HomeProps } from "./Home.types";
 import Header from "../../components/Header";
 import AddInput from "../../components/AddInput";
-import Participants from "../../components/Participant";
+import ParticipantsList from "../../components/ParticipantsList";
 
 const Home: React.FC<HomeProps> = ({
-	onPress,
+	handleParticipantAdd,
+	handleParticipantRemove,
 	title = "Nome do Evento",
 	day,
 	month,
 	weekDay,
-	year
+	year,
+	participants
 }) => {
     return (
         <View style={homeStyles.container}>
@@ -24,13 +26,10 @@ const Home: React.FC<HomeProps> = ({
 				year={year}
 			/>
 			<AddInput
-				onPress={onPress}
+				onPress={handleParticipantAdd}
 				placeholder="Adicione um participante"
 			/>
-			<Participants name="Luiz Felipe" />
-			<Participants name="Lucas Gusmão" />
-			<Participants name="Marcelo Melo" />
-			<Participants name="João Pedro" />
+			<ParticipantsList data={participants} onRemove={handleParticipantRemove}/>
         </View>
     );
 };
