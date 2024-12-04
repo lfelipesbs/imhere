@@ -1,4 +1,4 @@
 export interface ParticipantsListProps {
 	data: string[];
-	onRemove: () => void;
+	onRemove: (name: string) => void;
 };

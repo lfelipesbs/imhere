@@ -1,8 +1,9 @@
-import { ViewStyle } from "react-native";
+import { TextStyle, ViewStyle } from "react-native";
 
 export interface HomeProps {
 	handleParticipantAdd: () => void;
-	handleParticipantRemove: () => void;
+	handleParticipantRemove: (name: string) => void;
+	handleClearAll: () => void;
 	title?: string;
 	weekDay: string;
 	day: number;
@@ -13,4 +14,7 @@ export interface HomeProps {
 
 export interface HomeStyles {
 	container: ViewStyle;
+	clearAllContainer: ViewStyle;
+	clearAllText: TextStyle;
+	listEmptyText: TextStyle;
 };

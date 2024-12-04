@@ -10,19 +10,26 @@ const homeContainer: React.FC = () => {
 		setParticipants((prevParticipants) => [...prevParticipants, 'Novo participante']);
 	}, [setParticipants]);
 
-	const handleParticipantRemove = useCallback((): void => {
-		setParticipants((prevParticipants) => prevParticipants.slice(0, -1));
+	const handleParticipantRemove = useCallback((name: string): void => {
+		setParticipants((prevParticipants) =>
+			prevParticipants.filter((participant) => participant !== name)
+		);
+	}, [setParticipants]);
+
+	const handleClearAll = useCallback((): void => {
+		setParticipants([]);
 	}, [setParticipants]);
 
 	return (
 		<Home
-			handleParticipantAdd={handleParticipantAdd}
-			handleParticipantRemove={handleParticipantRemove}
 			day={date.getDate()}
 			month={getMonthName(date.getMonth())}
+			participants={participants}
 			weekDay={getWeekDay(date.getDay())}
 			year={date.getFullYear()}
-			participants={participants}
+			handleClearAll={handleClearAll}
+			handleParticipantAdd={handleParticipantAdd}
+			handleParticipantRemove={handleParticipantRemove}
 		/>
 	)
 }

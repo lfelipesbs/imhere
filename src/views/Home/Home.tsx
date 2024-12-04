@@ -1,5 +1,5 @@
 import React from "react";
-import { View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import { homeStyles } from "./Home.styles";
 import { HomeProps } from "./Home.types";
 import Header from "../../components/Header";
@@ -9,6 +9,7 @@ import ParticipantsList from "../../components/ParticipantsList";
 const Home: React.FC<HomeProps> = ({
 	handleParticipantAdd,
 	handleParticipantRemove,
+	handleClearAll,
 	title = "Nome do Evento",
 	day,
 	month,
@@ -19,17 +20,30 @@ const Home: React.FC<HomeProps> = ({
     return (
         <View style={homeStyles.container}>
             <Header
-				title={title}
 				day={day}
 				month={month}
+				title={title}
 				weekDay={weekDay}
 				year={year}
 			/>
 			<AddInput
-				onPress={handleParticipantAdd}
 				placeholder="Adicione um participante"
+				onPress={handleParticipantAdd}
 			/>
-			<ParticipantsList data={participants} onRemove={handleParticipantRemove}/>
+
+			{participants.length ?
+				(
+					<>
+						<TouchableOpacity style={homeStyles.clearAllContainer} onPress={handleClearAll}>
+							<Text style={homeStyles.clearAllText}>Limpar</Text>
+						</TouchableOpacity>
+						<ParticipantsList data={participants} onRemove={handleParticipantRemove} />
+					</>
+				) :
+				<Text style={homeStyles.listEmptyText}>
+					Ninguém confirmado até agora, adicione algum participante na lista!
+				</Text>
+			}
         </View>
     );
 };

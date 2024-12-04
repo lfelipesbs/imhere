@@ -6,7 +6,7 @@ export const addInputStyles = StyleSheet.create<AddInputStyles>({
 		width: '100%',
 		flexDirection: 'row',
 		marginTop: 36,
-		marginBottom: 42
+		marginBottom: 16
 	},
 	input: {
 		flex: 1,
