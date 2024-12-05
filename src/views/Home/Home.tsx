@@ -3,8 +3,8 @@ import { Text, TouchableOpacity, View } from "react-native";
 import { homeStyles } from "./Home.styles";
 import { HomeProps } from "./Home.types";
 import Header from "../../components/Header";
-import AddInput from "../../components/AddInput";
 import ParticipantsList from "../../components/ParticipantsList";
+import { AddInputField } from "../../components/form";
 
 const Home: React.FC<HomeProps> = ({
 	handleParticipantAdd,
@@ -15,7 +15,9 @@ const Home: React.FC<HomeProps> = ({
 	month,
 	weekDay,
 	year,
-	participants
+	participants,
+	control,
+	error
 }) => {
     return (
         <View style={homeStyles.container}>
@@ -26,9 +28,12 @@ const Home: React.FC<HomeProps> = ({
 				weekDay={weekDay}
 				year={year}
 			/>
-			<AddInput
+			<AddInputField
+				control={control}
+				name="participant"
 				placeholder="Adicione um participante"
-				onPress={handleParticipantAdd}
+				onAddParticipant={handleParticipantAdd}
+				error={error}
 			/>
 
 			{participants.length ?

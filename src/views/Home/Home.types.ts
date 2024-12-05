@@ -1,3 +1,4 @@
+import { Control, FieldValues, SubmitHandler } from "react-hook-form";
 import { TextStyle, ViewStyle } from "react-native";
 
 export interface HomeProps {
@@ -10,6 +11,8 @@ export interface HomeProps {
 	month: string;
 	year: number;
 	participants: string[];
+	control: Control<HomeFormValues>;
+	error?: string;
 };
 
 export interface HomeStyles {
@@ -18,3 +21,7 @@ export interface HomeStyles {
 	clearAllText: TextStyle;
 	listEmptyText: TextStyle;
 };
+
+export interface HomeFormValues {
+	participant: string;
+}

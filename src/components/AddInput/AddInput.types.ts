@@ -1,7 +1,7 @@
 import { TextInputProps, TextStyle, ViewStyle } from "react-native";
 
 export interface AddInputProps extends TextInputProps {
-	onPress?: () => void;
+	onAddParticipant?: () => void;
 	placeholder?: string;
 	error?: string;
 };

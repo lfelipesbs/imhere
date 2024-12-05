@@ -3,7 +3,7 @@ import { AddInputProps } from "./AddInput.types"
 import { addInputStyles } from "./AddInput.styles";
 
 const AddInput: React.FC<AddInputProps> = ({
-	onPress,
+	onAddParticipant,
 	placeholder,
 	error,
 	...props
@@ -16,7 +16,7 @@ const AddInput: React.FC<AddInputProps> = ({
 				placeholderTextColor="#6B6B6B"
 				{...props}
 			/>
-			<TouchableOpacity style={addInputStyles.button} onPress={onPress}>
+			<TouchableOpacity style={addInputStyles.button} onPress={onAddParticipant} disabled={!!error}>
 				<Text style={addInputStyles.buttonText}>
 					+
 				</Text>
