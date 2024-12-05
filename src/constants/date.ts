@@ -1,4 +1,4 @@
-export const weekDays: string[] = [
+export const weekDays = [
 	'Domingo',
 	'Segunda',
 	'Terça',
@@ -6,9 +6,9 @@ export const weekDays: string[] = [
 	'Quinta',
 	'Sexta',
 	'Sábado'
-];
+] as const;
 
-export const months: string[] = [
+export const months = [
 	'Janeiro',
 	'Fevereiro',
 	'Março',
@@ -21,4 +21,4 @@ export const months: string[] = [
 	'Outubro',
 	'Novembro',
 	'Dezembro'
-];
+] as const;

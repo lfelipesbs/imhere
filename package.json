@@ -9,10 +9,13 @@
     "web": "npx expo start --web"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.9.1",
     "expo": "~52.0.11",
     "expo-status-bar": "~2.0.0",
     "react": "18.3.1",
-    "react-native": "0.76.3"
+    "react-hook-form": "^7.53.2",
+    "react-native": "0.76.3",
+    "yup": "^1.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

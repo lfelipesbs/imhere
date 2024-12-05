@@ -29,5 +29,9 @@ export const addInputStyles = StyleSheet.create<AddInputStyles>({
 		backgroundColor: "#31CF67",
 		alignItems: 'center',
 		justifyContent: 'center'
+	},
+	error: {
+		color: '#E23C44',
+		marginBottom: 16
 	}
 });
